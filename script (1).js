@@ -26,6 +26,20 @@ const personalMovieDB = {
     privat: false
 };
 
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?', '');
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+}
+
+
 if (numberOfFilms <= 10) {
     alert('Просмотрено довольно мало фильмов')
 }
@@ -38,19 +52,4 @@ else if (numberOfFilms >= 30) {
 else {
     alert('Произошла ошибка!')
 }
-
-again: for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', ''),
-        c = prompt('Один из последних просмотренных фильмов?', ''),
-        d = prompt('На сколько оцените его?', '');
-}
-    if (b === null && b > 50) continue again;
-
-
-
-
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-console.log(personalMovieDB);
 // Код возьмите из предыдущего домашнего задания
